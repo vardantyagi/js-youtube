@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vardan Tyagi</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        let li = document.createElement("li");
+        li.innerHTML = langName;
+        const parent = document.querySelector(".language");
+        parent.appendChild(li);
+    }
+    addLanguage("Java");
+    addLanguage("Python");
+    addLanguage("C++");
+
+    function addOptimizedLanguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+    addOptimizedLanguage("Rust");
+    addOptimizedLanguage("golang");
+
+    // edit
+    // replace 2nd li
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "HTML"
+    const newLi = document.createElement("li");
+    newLi.textContent = "SQL";
+    secondLang.replaceWith(newLi);
+
+    //edit
+
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>TypeScript</li>";
+
+    //remove
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+</html>
